@@ -20,9 +20,6 @@ public class CompanyController {
 
     @GetMapping("all")
     public ResponseEntity<List<Company>> allCompany() {
-        System.out.println("In controller ");
-        List<Company> companies = this.companyService.allCampanies();
-        System.out.println(companies.size());
-        return ResponseEntity.ok(companies);
+        return ResponseEntity.ok(this.companyService.allCampanies());
     }
 }

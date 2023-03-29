@@ -20,7 +20,6 @@ public class CompanyServiceImpl implements CompanyService {
 
     @Override
     public List<Company> allCampanies() {
-        System.out.println("In Service Impl ");
         Map<String, UserResponseDTO> userRespMap = getUserDataFromAPI();
         Map<String, PostResponseDTO> postRespMap = getPostDataFromAPI();
         return filteredDataFromUserAndPost(userRespMap, postRespMap);
