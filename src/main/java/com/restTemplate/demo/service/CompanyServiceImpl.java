@@ -7,15 +7,20 @@ import com.restTemplate.demo.dto.PostResponseDTO;
 import com.restTemplate.demo.dto.UserResponseDTO;
 import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;
+import org.springframework.beans.factory.annotation.Value;
 
 import java.util.*;
 
 @Service
 public class CompanyServiceImpl implements CompanyService {
 
+    @Value("${app.userURL}")
+    private String userURL;
 
-    private String userURL = "https://jsonplaceholder.typicode.com/users";
-    private String postsURL = "https://jsonplaceholder.typicode.com/posts";
+    @Value("${app.postsURL}")
+    private String postsURL;
+
+
     private RestTemplate restTemplate = new RestTemplate();
 
     @Override
